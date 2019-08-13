@@ -9,6 +9,8 @@
 
 An implementation of [Micro Frontends](https://micro-frontends.org/), based on [single-spa](https://github.com/CanopyTax/single-spa), but made it production-ready.
 
+*Maybe the most complete micro-frontends solution you ever met🧐.*
+
 ## Usage
 
 ```shell
@@ -107,9 +109,11 @@ function start({ prefetch: boolean, jsSandbox: boolean }): void;
 
 ### Main Framework
 
+Use qiankun api to register the micro apps like what example shows above.
+
 ### Sub App
 
-Export those lifecycle hooks from your entry
+1. Export those lifecycle hooks from your entry
 
 ```typescript
 export async function bootstrap() {
@@ -127,7 +131,8 @@ export async function unmount() {
 
 For more lifecycle information, see [single-spa lifecycles](https://single-spa.js.org/docs/building-applications.html#registered-application-lifecycle)
 
-#### bundler configuration
+2. Config your bundler
+
 While you wanna build a sub app to integrate with qiankun, pls make sure your bundler have the required configuration below:
 ##### webpack:
 ```js
